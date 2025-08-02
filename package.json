@@ -1,0 +1,21 @@
+{
+  "name": "football-webseite",
+  "version": "1.0.0",
+  "description": "Planung",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests\"",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "sqlite3": "^5.1.7"
+  }
+}

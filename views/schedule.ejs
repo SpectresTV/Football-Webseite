@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Planung</title>
+</head>
+<body>
+  <h1>Planung</h1>
+  <form method="post" action="/schedule">
+    <label>Titel:<br><input type="text" name="title"></label><br>
+    <label>Datum:<br><input type="date" name="eventDate"></label><br>
+    <label>Beschreibung:<br><input type="text" name="description"></label><br>
+    <button type="submit">Hinzufügen</button>
+  </form>
+  <h2>Termine</h2>
+  <ul>
+    <% events.forEach(function(event){ %>
+      <li><strong><%= event.title %></strong> (<%= event.eventDate %>) - <%= event.description %></li>
+    <% }) %>
+  </ul>
+  <p><a href="/logout">Logout</a></p>
+</body>
+</html>
