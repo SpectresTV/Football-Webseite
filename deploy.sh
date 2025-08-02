@@ -19,6 +19,6 @@ npm run build
 # 'systemctl' benötigt möglicherweise sudo-Rechte.
 # Wenn das Skript ohne sudo ausgeführt wird, musst du dem ausführenden Benutzer
 # eventuell erlauben, diesen Befehl ohne Passwort auszuführen.
-systemctl reload nginx
+sudo systemctl reload nginx
 
 echo "Deployment erfolgreich abgeschlossen!"
