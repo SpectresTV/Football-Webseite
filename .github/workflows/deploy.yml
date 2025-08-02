@@ -1,0 +1,25 @@
+name: Deploy to Production Server
+
+# Dieser Workflow wird bei jedem Push auf den 'main'-Branch ausgeführt
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    # Name des Jobs
+    name: Deploy
+    # Wir führen diesen Job auf einem von GitHub gehosteten Ubuntu-Runner aus
+    runs-on: ubuntu-latest
+
+    steps:
+      # Schritt 1: SSH-Verbindung aufbauen und Deployment-Skript ausführen
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: /root/fussball-trainingsplaner/deploy.sh
