@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>Registrieren</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrieren</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/auth.css">
 </head>
 <body>
-  <h1>Registrieren</h1>
-  <% if (error) { %><p style="color:red"><%= error %></p><% } %>
-  <form method="post" action="/register">
-    <label>Benutzername:<br><input type="text" name="username"></label><br>
-    <label>Passwort:<br><input type="password" name="password"></label><br>
-    <button type="submit">Registrieren</button>
-  </form>
-  <p>Schon ein Konto? <a href="/login">Login</a></p>
+  <div class="auth-container">
+    <h1>Registrieren</h1>
+    <% if (error) { %><p class="error"><%= error %></p><% } %>
+    <form method="post" action="/register">
+      <label>Benutzername:
+        <input type="text" name="username" required>
+      </label>
+      <label>Passwort:
+        <input type="password" name="password" required>
+      </label>
+      <button type="submit">Registrieren</button>
+    </form>
+    <div class="auth-link">Schon ein Konto? <a href="/login">Login</a></div>
+  </div>
 </body>
 </html>
