@@ -12,11 +12,11 @@
     <h1>Login</h1>
     <% if (error) { %><p class="error"><%= error %></p><% } %>
     <form method="post" action="/login">
-      <label>Benutzername:
-        <input type="text" name="username" required>
+      <label>Benutzername
+        <input type="text" name="username" required autocomplete="username">
       </label>
-      <label>Passwort:
-        <input type="password" name="password" required>
+      <label>Passwort
+        <input type="password" name="password" required autocomplete="current-password">
       </label>
       <button type="submit">Login</button>
     </form>
